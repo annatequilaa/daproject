@@ -1,5 +1,21 @@
 <html>
 <head>
+    <style>
+    .parent{
+        background-color: blue;
+        height: 400px;
+        width: 400px;
+    }
+    .child{
+        background-color: red;
+        height: 50%;
+        width: 50%;
+    }
+    .parent:hover .child{
+        transform: translateX(100%);
+        animation: left-to-right 1s ease-in;
+    }
+    </style>
 </head>
 <body>
     1st visit
