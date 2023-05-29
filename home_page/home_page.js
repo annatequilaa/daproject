@@ -11,7 +11,7 @@ function checkSession(){
      alert("Welcome back!");
    } else {
      alert("Welcome new visitor!");
-     window.location.href = 'https://annatequilaa.github.io/daproject/arrow_anim/arrows.html';
+     window.location.href = 'https://annatequilaa.github.io/daproject/intro_page/intro_page.html';
    }
    setCookie("visited", "yes", 365); // expire in 1 year; or use null to never expire
 }
