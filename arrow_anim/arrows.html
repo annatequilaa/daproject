@@ -1,20 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            .arrow1_right, .arrow2_right, .arrow3_right {
-                border: solid black;
-                border-width: 0 3px 3px 0;
-                display: inline-block;
-                padding: 3px;
-                transform: rotate(-45deg);
-            }
+<head>
+  <style>
+    .circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation-play-state: running;
+    }
 
-        </style>
-    </head>
-    <body>
-        <div class="arrow1_right"></div>
-        <div class="arrow2_right"></div>
-        <div class="arrow3_right"></div>
-    </body>
+    .circle:hover #arrow1, .circle:hover #arrow2, .circle:hover #arrow3 { 
+        animation-play-state: paused;
+    }
+
+    .arrow_right {
+      border: solid black;
+      height: 12px;
+      width: 12px;
+      border-width: 0 4px 4px 0;
+      display: inline-block;
+      padding: 2px;
+      transform: rotate(-45deg);
+      position: absolute;
+    }
+
+    #arrow1 {
+      top: 50%;
+      left: 26%;
+      transform: translate(-70%, -50%) rotate(-45deg);
+      animation: arrowAnimation1 1.6s infinite;
+    }
+
+    #arrow2 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-70%, -50%) rotate(-45deg);
+      animation: arrowAnimation2 1.6s infinite;
+    }
+
+    #arrow3 {
+      top: 50%;
+      left: 74%;
+      transform: translate(-70%, -50%) rotate(-45deg);
+      animation: arrowAnimation3 1.6s infinite;
+    }
+
+    @keyframes arrowAnimation1 {
+      0%, 100% {
+        transform: translate(-70%, -50%) rotate(-45deg);
+      }
+      50% {
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    @keyframes arrowAnimation2 {
+      0%, 100% {
+        transform: translate(-70%, -50%) rotate(-45deg);
+      }
+      50% {
+        left: 64%;
+        transform: translate(-6%, -50%) rotate(-45deg);
+      }
+    }
+
+    @keyframes arrowAnimation3 {
+      0%, 100% {
+        transform: translate(-70%, -50%) rotate(-45deg);
+      }
+      50% {
+        left: 74%;
+        transform: translate(2%, -50%) rotate(-45deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="circle">
+    <div class="arrow_right" id="arrow1"></div>
+    <div class="arrow_right" id="arrow2"></div>
+    <div class="arrow_right" id="arrow3"></div>
+  </div>
+</body>
 </html>
