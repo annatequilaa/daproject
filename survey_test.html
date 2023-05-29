@@ -49,7 +49,7 @@
     </style>
     <script>
         function selectChoice(choiceId) {
-            var choices = document.querySelectorAll('.choice');
+            var choices = document.getElementsByClassName('choice');
             
             for (var i = 0; i < choices.length; i++) {
                 choices[i].classList.remove('selected');
