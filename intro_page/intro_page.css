@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 70%;
+    height: 70%;
+    border: 2px solid transparent;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .heading {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .skip {
+    font-size: 12px;
+    color: black;
+    margin-top: 20px;
+  }
+
+  .arrow_container {
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+    text-align: center;
+    transform: scale(0.5);
+    margin-top: 20px;
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle; */
+    top: -25%;
+  }
+
+  .circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -100;
+  }
+
+  .circle, .arrow_right{
+    filter: invert(0); /* Initial state with no inversion */
+    transition: filter 0.3s ease;
+  }
+
+  .arrow_right {
+    border: solid black;
+    height: 12px;
+    width: 12px;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 10;
+  }
+
+  #arrow1 {
+    top: 50%;
+    left: 26%;
+    transform: translate(-70%, -50%) rotate(-45deg);
+    animation: arrowAnimation1 1.6s infinite;
+  }
+
+  #arrow2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%) rotate(-45deg);
+    animation: arrowAnimation2 1.6s infinite;
+  }
+
+  #arrow3 {
+    top: 50%;
+    left: 74%;
+    transform: translate(-70%, -50%) rotate(-45deg);
+    animation: arrowAnimation3 1.6s infinite;
+  }
+
+  .arrow_container:hover { 
+    filter: invert(1);
+  }
+
+  .arrow_container:not(:hover) #arrow1, .arrow_container:not(:hover) #arrow2, .arrow_container:not(:hover) #arrow3 {
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes arrowAnimation1 {
+    0%, 100% {
+      transform: translate(-70%, -50%) rotate(-45deg);
+    }
+    50% {
+      left: 60%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  @keyframes arrowAnimation2 {
+    0%, 100% {
+      transform: translate(-70%, -50%) rotate(-45deg);
+    }
+    50% {
+      left: 64%;
+      transform: translate(-6%, -50%) rotate(-45deg);
+    }
+  }
+
+  @keyframes arrowAnimation3 {
+    0%, 100% {
+      transform: translate(-70%, -50%) rotate(-45deg);
+    }
+    50% {
+      left: 74%;
+      transform: translate(2%, -50%) rotate(-45deg);
+    }
+  }
