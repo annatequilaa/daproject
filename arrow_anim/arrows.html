@@ -2,21 +2,30 @@
 <html>
 <head>
   <style>
+    .container {
+      width: 100px;
+      height: 100px;
+      z-index: 100;
+    }
+
     .circle {
       width: 90px;
       height: 90px;
       border-radius: 50%;
       border: 4px solid black;
+      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
-      animation-play-state: running;
+      z-index: -100;
     }
 
-    .circle:hover #arrow1, .circle:hover #arrow2, .circle:hover #arrow3 { 
-        animation-play-state: paused;
+    .circle, .arrow_right{
+      filter: invert(0); /* Initial state with no inversion */
+      transition: filter 0.3s ease;
     }
+
 
     .arrow_right {
       border: solid black;
@@ -27,6 +36,7 @@
       padding: 2px;
       transform: rotate(-45deg);
       position: absolute;
+      z-index: 10;
     }
 
     #arrow1 {
@@ -48,6 +58,18 @@
       left: 74%;
       transform: translate(-70%, -50%) rotate(-45deg);
       animation: arrowAnimation3 1.6s infinite;
+    }
+
+
+    .container:hover { 
+      filter: invert(1);
+      /* animation-play-state: running; */
+      /* animation-fill-mode: infinite; */
+    }
+
+    .container:not(:hover) #arrow1, .container:not(:hover) #arrow2, .container:not(:hover) #arrow3 {
+      animation-play-state: paused;
+      animation-fill-mode: forwards;
     }
 
     @keyframes arrowAnimation1 {
@@ -83,10 +105,12 @@
   </style>
 </head>
 <body>
-  <div class="circle">
-    <div class="arrow_right" id="arrow1"></div>
-    <div class="arrow_right" id="arrow2"></div>
-    <div class="arrow_right" id="arrow3"></div>
+  <div class="container">
+    <div class="circle">
+      <div class="arrow_right" id="arrow1"></div>
+      <div class="arrow_right" id="arrow2"></div>
+      <div class="arrow_right" id="arrow3"></div>
+    </div>
   </div>
 </body>
 </html>
