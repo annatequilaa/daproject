@@ -16,13 +16,7 @@
             <div class="welcome_title">
                 Select your country/region: 
             </div>
-          </div>
-          <!-- <div class="arrow_container" id="arrowContainerBox">
-            <div class="circle">
-              <div class="arrow_right" id="arrow1"></div>
-              <div class="arrow_right" id="arrow2"></div>
-              <div class="arrow_right" id="arrow3"></div>
-            </div> -->
+
             <div class="country_container">
               <!-- Country names and Country Name -->
               <select class="countries" id="country-select">
@@ -280,12 +274,30 @@
                 <option value="Zimbabwe">Zimbabwe</option>
               </select>
             </div>
-
           </div>
-          <a class="skip" id="skipButton" href="whoops_msg.html">
-            Skip
-          </a>
-        </div> 
-
+          <div class="arrow_container" id="arrowContainerBox">
+            <div class="circle">
+              <div class="arrow_right" id="arrow1"></div>
+              <div class="arrow_right" id="arrow2"></div>
+              <div class="arrow_right" id="arrow3"></div>
+            </div>
+          </div>
+          <div class="arrow_container_left" id="arrowContainerBox_Left">
+            <div class="circle">
+              <div class="arrow_left" id="arrow4"></div>
+              <div class="arrow_left" id="arrow5"></div>
+              <div class="arrow_left" id="arrow6"></div>
+            </div>
+          </div>   
+      <a class="skip" id="skipButton" href="whoops_msg.html">
+        Skip
+      </a>
     </body>
+
+    <script>
+      document.getElementById("arrowContainerBox").addEventListener("click", function() {
+        window.location.href = "whoops_msg.html";
+      });    
+    </script>
+
 </html>

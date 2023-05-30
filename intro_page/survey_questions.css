@@ -15,7 +15,7 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 20px;
@@ -33,7 +33,7 @@ body {
   }
   
   .content {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,32 +49,35 @@ body {
   }
   
   .skip {
+    flex: 2;
     font-size: 12px;
     color: black;
-    margin-top: 20px;
+    margin-top: 150px;
   }
 
 .country_container {
+    height: 5%;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: top;
+    top: 30px;
 }
 
-  .arrow_container {
+  .arrow_container, .arrow_container_left {
     width: 100px;
     height: 100px;
     z-index: 100;
-    text-align: center;
-    transform: scale(0.5);
-    margin-top: 20px;
+    text-align: right;
+    transform: scale(0.25);
+
     position: relative;
     /* display: flex;
     justify-content: center;
     align-items: center;
     vertical-align: middle; */
-    top: -25%;
+    right: -25%;
   }
 
   .circle {
@@ -90,49 +93,56 @@ body {
     z-index: -100;
   }
 
-  .circle, .arrow_right{
+  .circle, .arrow_right, .arrow_left {
     filter: invert(0); /* Initial state with no inversion */
     transition: filter 0.3s ease;
   }
 
-  .arrow_right {
+  .arrow_right, .arrow_left {
     border: solid black;
     height: 12px;
     width: 12px;
-    border-width: 0 4px 4px 0;
+    border-width: 0 5px 5px 0;
     display: inline-block;
     padding: 2px;
-    transform: rotate(-45deg);
     position: absolute;
     z-index: 10;
   }
 
-  #arrow1 {
+  #arrow1, #arrow4 {
     top: 50%;
     left: 26%;
-    transform: translate(-70%, -50%) rotate(-45deg);
+    transform: translate(-70%, -50%);
     animation: arrowAnimation1 1.6s infinite;
   }
 
-  #arrow2 {
+  #arrow2, #arrow5 {
     top: 50%;
     left: 50%;
-    transform: translate(-70%, -50%) rotate(-45deg);
+    transform: translate(-70%, -50%);
     animation: arrowAnimation2 1.6s infinite;
   }
 
-  #arrow3 {
+  #arrow3, #arrow6 {
     top: 50%;
     left: 74%;
-    transform: translate(-70%, -50%) rotate(-45deg);
+    transform: translate(-70%, -50%);
     animation: arrowAnimation3 1.6s infinite;
   }
 
-  .arrow_container:hover { 
+  .arrow_container_left {
+    text-align: left;
+    left: -25%;
+    transform: scale(0.5) scaleY(180deg);
+    margin-top: -10%;
+  }
+
+  .arrow_container:hover, .arrow_container_left:hover { 
     filter: invert(1);
   }
 
-  .arrow_container:not(:hover) #arrow1, .arrow_container:not(:hover) #arrow2, .arrow_container:not(:hover) #arrow3 {
+  .arrow_container:not(:hover) #arrow1, .arrow_container:not(:hover) #arrow2, .arrow_container:not(:hover) #arrow3,
+  .arrow_container_left:not(:hover) #arrow4, .arrow_container_left:not(:hover) #arrow5, .arrow_container_left:not(:hover) #arrow6 {
     animation-play-state: paused;
     animation-fill-mode: forwards;
   }
