@@ -3,6 +3,9 @@
 <head>
     <title>Survey Page</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="survey_questions.css">
     <style>
         .search-container {
@@ -28,13 +31,14 @@
                 Select your country/region:
             </div>
             
-            <div class="search-container">
+<!--             <div class="search-container">
                 <input type="text" class="search-input" id="country-search" placeholder="Search countries">
-            </div>
+            </div> -->
 
             <div class="country_container">
                 <!-- Country names and Country Name -->
-                <select class="countries" id="country-select">
+<!--                 <select class="countries" id="country-select"> -->
+                  <select class="countries select2" id="country-select">
                     <option value="">--Select a country--</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Aland Islands">Aland Islands</option>
@@ -292,7 +296,7 @@
         </div>
     </div>
 
-    <script>
+<!--     <script>
         const searchInput = document.getElementById('country-search');
         const countrySelect = document.getElementById('country-select');
         const countryOptions = countrySelect.options;
@@ -311,6 +315,19 @@
                 }
             }
         });
-    </script>
+    </script> -->
+    
+     <script>
+    $(document).ready(function() {
+      $('.select2').select2({
+        minimumResultsForSearch: -1
+      });
+      $('.select2').on('select2:open', function() {
+        $('.select2-search__field').prop('focus', true);
+      });
+    });
+  </script>
+</body>
+
 </body>
 </html>
