@@ -322,8 +322,8 @@
       $('.select2').select2({
         minimumResultsForSearch: -1
       });
-      $('.select2').on('select2:open', function() {
-        $('.select2-search__field').prop('focus', true);
+    $('.select2').on('select2:open', function() {
+        $('.select2-search__field').trigger('focus');
       });
     });
   </script>
