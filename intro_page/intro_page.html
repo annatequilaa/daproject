@@ -8,6 +8,14 @@
 
 </head>
 <body>
+  <div class="loading_area" id="preloader">
+    <div class="load_container">
+      <span class="loader1"></span>
+      <span class="loader2"></span>	
+    </div>
+    				
+  </div>
+
   <div class="goxip_logo">
     GOXIP
   </div>
@@ -34,7 +42,13 @@
   <script>
     document.getElementById("arrowContainerBox").addEventListener("click", function() {
       window.location.href = "survey_q1country.html";
-    });    
+    });
+
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+
   </script>
 
 </body>

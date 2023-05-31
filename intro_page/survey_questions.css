@@ -124,7 +124,7 @@ body {
   }
 
   .arrow_left{
-    transform: scaleX(-1);
+    transform: scaleX(-1); 
 
   }
 
