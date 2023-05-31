@@ -74,6 +74,7 @@ body {
   text-align: center;
   margin: auto;
 
+
 }
 
   .arrow_container, .arrow_container_left {
@@ -89,7 +90,6 @@ body {
   .arrow_container_left { 
     text-align: left;
     left: -5%;
-    transform: scale(0.5) scaleY(180deg);
     margin-top: -10%;
   }
 
@@ -121,6 +121,11 @@ body {
     padding: 2px;
     position: absolute;
     z-index: 10;
+  }
+
+  .arrow_left{
+    transform: scaleX(-1);
+
   }
 
   #arrow1, #arrow4 {
