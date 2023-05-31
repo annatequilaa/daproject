@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Survey Page</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+<head>
+    <title>Survey Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="survey_questions.css">
+    <style>
+        .search-container {
+            margin-bottom: 10px;
+        }
 
-        <link rel="stylesheet" type="text/css" href="survey_questions.css">
-
-    </head>
-    <body>
-        <div class="goxip_logo">
-          GOXIP
-        </div>
-        <div class="container">
-          <div class="content">
+        .search-input {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="goxip_logo">
+        GOXIP
+    </div>
+    <div class="container">
+        <div class="content">
             <div class="welcome_title">
-                Select your country/region: 
+                Select your country/region:
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" id="country-search" placeholder="Search countries">
             </div>
 
             <div class="country_container">
-              <!-- Country names and Country Name -->
-              <select class="countries" id="country-select">
-                <option value="">--Select a country--</option>
-                <option value="Afghanistan">Afghanistan</option>
-                <option value="Aland Islands">Aland Islands</option>
-                <option value="Albania">Albania</option>
+                <!-- Country names and Country Name -->
+                <select class="countries" id="country-select">
+                    <option value="">--Select a country--</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Aland Islands">Aland Islands</option>
+                                    <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>
                 <option value="American Samoa">American Samoa</option>
                 <option value="Andorra">Andorra</option>
@@ -272,38 +287,30 @@
                 <option value="Yemen">Yemen</option>
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
-              </select>
+                </select>
             </div>
-          </div>
-          <div class="arrow_ultra_container">
-            <div class="arrow_container" id="arrowContainerBox">
-              <div class="circle">
-                <div class="arrow_right" id="arrow1"></div>
-                <div class="arrow_right" id="arrow2"></div>
-                <div class="arrow_right" id="arrow3"></div>
-              </div>
-            </div>
-            <div class="arrow_container_left" id="arrowContainerBox_Left">
-              <div class="circle">
-                <div class="arrow_left" id="arrow4"></div>
-                <div class="arrow_left" id="arrow5"></div>
-                <div class="arrow_left" id="arrow6"></div>
-              </div>
-            </div> 
-          </div>
-        </div>  
-      <a class="skip" id="skipButton" href="whoops_msg.html">
-        Skip
-      </a>
-    </body>
+        </div>
+    </div>
 
     <script>
-      document.getElementById("arrowContainerBox").addEventListener("click", function() {
-        window.location.href = "whoops_msg.html";
-      });
-      document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
-        window.location.href = "intro_page.html";
-      });        
+        const searchInput = document.getElementById('country-search');
+        const countrySelect = document.getElementById('country-select');
+        const countryOptions = countrySelect.options;
+        
+        searchInput.addEventListener('input', function(event) {
+            const searchText = event.target.value.toLowerCase();
+            
+            for (let i = 0; i < countryOptions.length; i++) {
+                const option = countryOptions[i];
+                const countryName = option.text.toLowerCase();
+                
+                if (countryName.indexOf(searchText) === -1) {
+                    option.style.display = 'none';
+                } else {
+                    option.style.display = '';
+                }
+            }
+        });
     </script>
-
+</body>
 </html>
