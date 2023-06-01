@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="survey_questions.css">
+
+    </head>
+    <body>
+        <div class="goxip_logo">
+          GOXIP
+        </div>
+        <div class="container">
+          <div class="content">
+            <div class="welcome_title">
+               
+           </div>
+
+          <div class="arrow_ultra_container">
+            <div class="arrow_container" id="arrowContainerBox">
+              <div class="circle">
+                <div class="arrow_right" id="arrow1"></div>
+                <div class="arrow_right" id="arrow2"></div>
+                <div class="arrow_right" id="arrow3"></div>
+              </div>
+            </div>
+            <div class="arrow_container_left" id="arrowContainerBox_Left">
+              <div class="circle">
+                <div class="arrow_left" id="arrow4"></div>
+                <div class="arrow_left" id="arrow5"></div>
+                <div class="arrow_left" id="arrow6"></div>
+              </div>
+            </div> 
+          </div>
+        </div>  
+      <a class="skip" id="skipButton" href="whoops_msg.html">
+        Skip
+      </a>
+    </body>
+
+    <script>
+      document.getElementById("arrowContainerBox").addEventListener("click", function() {
+        window.location.href = "whoops_msg.html";
+      });
+      document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+        window.location.href = "intro_page.html";
+      });        
+    </script>
+
+</html>
