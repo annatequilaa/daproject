@@ -52,94 +52,90 @@
             GOXIP
         </div>
         <div class="survey-container">
-    <h2>What is your age group?</h2>
-    <div class="circle-container">
-      <div class="circle" id="circle1"></div>
-      <label for="circle1">Under 16</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle2"></div>
-      <label for="circle2">16-21</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle3"></div>
-      <label for="circle3">22-29</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle4"></div>
-      <label for="circle4">30-44</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle5"></div>
-      <label for="circle5">45-54</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle6"></div>
-      <label for="circle6">55-64</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle7"></div>
-      <label for="circle7">65+</label>
-    </div>
-    <div class="circle-container">
-      <div class="circle" id="circle8"></div>
-      <label for="circle8">Prefer not to say</label>
-    </div>
-  </div>
-               
-           </div>
+            <h2>What is your age group?</h2>
+            <div class="circle-container">
+                <div class="circle" id="circle1"></div>
+                <label for="circle1">Under 16</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle2"></div>
+                <label for="circle2">16-21</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle3"></div>
+                <label for="circle3">22-29</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle4"></div>
+                <label for="circle4">30-44</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle5"></div>
+                <label for="circle5">45-54</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle6"></div>
+                <label for="circle6">55-64</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle7"></div>
+                <label for="circle7">65+</label>
+            </div>
+            <div class="circle-container">
+                <div class="circle" id="circle8"></div>
+                <label for="circle8">Prefer not to say</label>
+            </div>
+        </div>
 
-          <div class="arrow_ultra_container">
+        <div class="arrow_ultra_container">
             <div class="arrow_container" id="arrowContainerBox">
-              <div class="circle">
-                <div class="arrow_right" id="arrow1"></div>
-                <div class="arrow_right" id="arrow2"></div>
-                <div class="arrow_right" id="arrow3"></div>
-              </div>
+                <div class="circle">
+                    <div class="arrow_right" id="arrow1"></div>
+                    <div class="arrow_right" id="arrow2"></div>
+                    <div class="arrow_right" id="arrow3"></div>
+                </div>
             </div>
             <div class="arrow_container_left" id="arrowContainerBox_Left">
-              <div class="circle">
-                <div class="arrow_left" id="arrow4"></div>
-                <div class="arrow_left" id="arrow5"></div>
-                <div class="arrow_left" id="arrow6"></div>
-              </div>
+                <div class="circle">
+                    <div class="arrow_left" id="arrow4"></div>
+                    <div class="arrow_left" id="arrow5"></div>
+                    <div class="arrow_left" id="arrow6"></div>
+                </div>
             </div> 
-          </div>
-        </div>  
-      <a class="skip" id="skipButton" href="whoops_msg.html">
-        Skip
-      </a>
+        </div>
+
+        <a class="skip" id="skipButton" href="whoops_msg.html">
+            Skip
+        </a>
+
+        <script>
+            document.getElementById("arrowContainerBox").addEventListener("click", function() {
+                window.location.href = "whoops_msg.html";
+            });
+            document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+                window.location.href = "intro_page.html";
+            });
+
+            var selectedCircle = null;
+
+            function selectCircle(circleId) {
+                if (selectedCircle !== null) {
+                    selectedCircle.classList.remove('selected');
+                }
+                var circle = document.getElementById(circleId);
+                circle.classList.add('selected');
+                selectedCircle = circle;
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var circles = document.getElementsByClassName('circle');
+                for (var i = 0; i < circles.length; i++) {
+                    circles[i].addEventListener('click', function(e) {
+                        selectCircle(e.target.id);
+                    });
+                }
+            });
+        </script>
+
     </body>
-
-    <script>
-      document.getElementById("arrowContainerBox").addEventListener("click", function() {
-        window.location.href = "whoops_msg.html";
-      });
-      document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
-        window.location.href = "intro_page.html";
-      });  
-         var selectedCircle = null;
-
-    function selectCircle(circleId) {
-      if (selectedCircle !== null) {
-        selectedCircle.classList.remove('selected');
-      }
-      var circle = document.getElementById(circleId);
-      circle.classList.add('selected');
-      selectedCircle = circle;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      var circles = document.getElementsByClassName('circle');
-      for (var i = 0; i < circles.length; i++) {
-        circles[i].addEventListener('click', function(e) {
-          selectCircle(e.target.id);
-        });
-      }
-    });
-    </script>
-
 </html>
-
-
-
- 
