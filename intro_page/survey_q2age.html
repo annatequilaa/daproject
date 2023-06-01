@@ -3,14 +3,106 @@
     <head>
         <title>Survey Page</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
-
         <link rel="stylesheet" type="text/css" href="survey_questions.css">
+        <style>
+            body {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+              padding: 20px;
+            }
+
+            .survey-container {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+
+            .circle-container {
+              display: flex;
+              align-items: center;
+              margin-bottom: 10px;
+            }
+
+            .circle {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background-color: white;
+              border: 1px solid black;
+              cursor: pointer;
+              margin-right: 5px;
+            }
+
+            .selected {
+              background-color: black;
+            }
+          </style>
     </head>
     <body>
         <div class="goxip_logo">
             GOXIP
         </div>
-        
+        <div class="survey-container">
+    <h2>What is your age group?</h2>
+    <div class="circle-container">
+      <div class="circle" id="circle1"></div>
+      <label for="circle1">Under 16</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle2"></div>
+      <label for="circle2">16-21</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle3"></div>
+      <label for="circle3">22-29</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle4"></div>
+      <label for="circle4">30-44</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle5"></div>
+      <label for="circle5">45-54</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle6"></div>
+      <label for="circle6">55-64</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle7"></div>
+      <label for="circle7">65+</label>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle8"></div>
+      <label for="circle8">Prefer not to say</label>
+    </div>
+  </div>
+
+  <script>
+    var selectedCircle = null;
+
+    function selectCircle(circleId) {
+      if (selectedCircle !== null) {
+        selectedCircle.classList.remove('selected');
+      }
+      var circle = document.getElementById(circleId);
+      circle.classList.add('selected');
+      selectedCircle = circle;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var circles = document.getElementsByClassName('circle');
+      for (var i = 0; i < circles.length; i++) {
+        circles[i].addEventListener('click', function(e) {
+          selectCircle(e.target.id);
+        });
+      }
+    });
+  </script>
         
     </body>
 
