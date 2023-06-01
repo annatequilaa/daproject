@@ -113,11 +113,11 @@
         selectedCircle.classList.remove('selected');
       }
       var circle = document.getElementById(circleId);
-      circle.classList.add('selected');
-      selectedCircle = circle;
+      circel.classList.add('selected');
+      selectedCircle = circel;
     }
     document.addEventListener('DOMContentLoaded', function() {
-      var circles = document.getElementsByClassName('circle');
+      var circles = document.getElementsByClassName('circel');
       for (var i = 0; i < circles.length; i++) {
         circles[i].addEventListener('click', function(e) {
           selectCircle(e.target.id);
