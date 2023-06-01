@@ -106,31 +106,29 @@
         </a>
 
         <script>
+               var selectedCircle = null;
+
+    function selectCircle(circleId) {
+      if (selectedCircle !== null) {
+        selectedCircle.classList.remove('selected');
+      }
+      var circle = document.getElementById(circleId);
+      circle.classList.add('selected');
+      selectedCircle = circle;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var circles = document.getElementsByClassName('circle');
+      for (var i = 0; i < circles.length; i++) {
+        circles[i].addEventListener('click', function(e) {
+          selectCircle(e.target.id);
+        });
+      }
+    });
             document.getElementById("arrowContainerBox").addEventListener("click", function() {
                 window.location.href = "survey_q3gender.html";
             });
             document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
                 window.location.href = "survey_q1country.html";
-            });
-
-            var selectedCircle = null;
-
-            function selectCircle(circleId) {
-                if (selectedCircle !== null) {
-                    selectedCircle.classList.remove('selected');
-                }
-                var circle = document.getElementById(circleId);
-                circle.classList.add('selected');
-                selectedCircle = circle;
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-                var circles = document.getElementsByClassName('circle');
-                for (var i = 0; i < circles.length; i++) {
-                    circles[i].addEventListener('click', function(e) {
-                        selectCircle(e.target.id);
-                    });
-                }
             });
         </script>
 
