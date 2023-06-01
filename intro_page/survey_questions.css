@@ -1,3 +1,7 @@
+* {
+  border: 2px solid red;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -120,35 +124,27 @@ body {
     align-items: top;
     top: 30px;
 }
+
 .arrow_ultra_container{
   flex:1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width:100%;
   text-align: center;
   margin: auto;
-
-
 }
 
   .arrow_container, .arrow_container_left {
     width: 100px;
     height: 100px;
     z-index: 100;
-    text-align: right;
     transform: scale(0.25);
     position: relative;
-    right: -5%;
+    text-align: center;
+    right: 5%;
   }
-
-  .arrow_container_left { 
-    text-align: left;
-    left: -5%;
-    margin-top: -10%;
-  }
-
 
   .circle {
     width: 90px;
@@ -179,10 +175,19 @@ body {
     z-index: 10;
   }
 
-  .arrow_left {
-    transform: scaleY(180deg); 
+  #arrowContainerBox {
+    right: -25%;
 
   }
+
+  #arrowContainerBox_Left {
+    transform: rotate(180deg) scale(0.25);
+    left: -25%;
+  }
+
+.page_num {
+
+}
 
   #arrow1, #arrow4 {
     top: 50%;
