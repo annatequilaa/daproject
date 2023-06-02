@@ -1,0 +1,10 @@
+Taiwan: Zara, Uniqlo, H&M, Nike, Adidas, The North Face, Forever 21, Mango
+Hong Kong: G2000, Pull&Bear, Giordano, Uniqlo, Zara, H&M, Adidas, Nike
+India: Fabindia, Nike, Adidas, Puma, Levi's, H&M, Zara, Biba
+United States: American Eagle Outfitters, Calvin Klein, Nike, Adidas, Levi's, Gap, H&M, Zara
+United Kingdom: Marks & Spencer, Next, Primark, ASOS, H&M, Zara, Topshop, River Island
+Brazil: Renner, C&A, Riachuelo, Hering, Colcci, Osklen, Farm, Animale
+Australia: Cotton On, Country Road, Witchery, Sportsgirl, Bonds, Seed Heritage, Zimmermann, Cue,
+Japan: Uniqlo, GU, Zara, H&M, Adidas, Nike, Forever21, Muji
+Philippines: Bench, Penshoppe, SM Youth, Forever 21, H&M, Zara, Uniqlo, Mango, Adidas
+South Africa: Woolworths, Mr Price, Truworths, Foschini, H&M, Zara, Adidas, Nike
