@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+height: 3000px;
+}
 
 .loading_area{
     background: #ffffff;
@@ -58,7 +62,7 @@
 /* -----------------------------------------------------*/
 
 * {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 }
@@ -69,6 +73,12 @@
 }
 
 /* <----------> */
+
+.sticky_bar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
 
 .top_bar{
     display: flex;
@@ -115,4 +125,132 @@
     padding: 5px;
     display: flex;
     flex-direction: row;
+}
+
+/* <----------> */
+
+.ad_section{
+  width: 100%;
+}
+
+.big_ad{
+  position: relative;
+  display: inline-block;
+}
+
+.big_ad_text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: black;
+  padding: 10px;
+}
+
+.big_ad_title {
+  font-size: 36px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.big_ad_description {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+/* <----------> */
+
+.pers-carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pers-carousel-1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Remove scrollbar for Firefox */
+  -ms-overflow-style: none; /* Remove scrollbar for IE and Edge */
+}
+
+.pers-carousel-1::-webkit-scrollbar {
+  display: none; /* Remove scrollbar for Chrome, Safari, and Opera */
+}
+
+.pers-carousel-1 .box {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px; 
+  margin-right: 20px;
+  background-color: #ccc;
+
+  transition: filter 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+
+.pers-carousel-1 .box:hover {
+  filter: brightness(0.7);
+  transform: scale(1.1);
+}
+
+.pers-carousel-1 .box .pers_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  /* background-color: rgba(256, 256, 256, 0.8); */
+  color: black;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.pers-carousel-1 .box:hover .pers_content {
+  transform: translateY(0);
+}
+
+.pers-content {
+  padding-left: 30px;
+
+}
+
+#persContentTitle, #persContentDesc {
+  right:10%;
+
+}
+
+.pers_label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.carousel-navigation {
+  position: relative;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carousel-navigation button {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-navigation button:hover {
+  opacity: 1;
 }

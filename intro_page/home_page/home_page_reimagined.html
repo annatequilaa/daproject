@@ -13,66 +13,166 @@
               <span class="loader2"></span>	
             </div>
         </div>
+ 
 
-        <div class="top_bar">
-            <div class="location_choices">
-                <a id="region" href="prototype_reminder.html">🇹🇼 TAIWAN</a>
-                <span> | </span>
-                <a id="language" href="prototype_reminder.html">ENGLISH</a>
+        <div class="sticky_bar">
+            <div class="top_bar">
+                <div class="location_choices">
+                    <a id="region" href="prototype_reminder.html">TAIWAN</a>
+                    <span> | </span>
+                    <a id="language" href="prototype_reminder.html">ENGLISH</a>
+                </div>
+                <a class="goxip_logo" href="home_page_reimagined.html">GOXIP
+                </a>
+                <div class="account_choices">
+                    <a href="prototype_reminder.html">GOXIP CIRCLE</a>
+                    <a class="account" href="prototype_reminder.html">A</a>
+                    <a class="shopping_bag" href="prototype_reminder.html">B</a>
+                </div>
             </div>
-            <a class="goxip_logo" href="home_page_reimagined.html">GOXIP
-            </a>
-            <div class="account_choices">
-                <a href="prototype_reminder.html">GOXIP CIRCLE</a>
-                <a class="account" href="prototype_reminder.html">A</a>
-                <a class="shopping_bag" href="prototype_reminder.html">B</a>
+    
+            <div class="second_bar">
+                <!-- drag and drop? -->
+                <div class="categories">
+                    <a href="prototype_reminder.html">TOP</a>
+                    <a href="prototype_reminder.html">BOTTOM</a>
+                    <a href="prototype_reminder.html">DRESS</a>
+                    <a href="prototype_reminder.html">OUTERWEAR</a>
+                    <a href="prototype_reminder.html">SHOES</a>
+                    <a href="prototype_reminder.html">JEWLERY</a>
+                </div>
+                <div class="search_container">
+                    <!-- <img/> -->
+                    <div>🔍︎ </div>
+                    <input id="search_bar"></input>
+                </div>
             </div>
         </div>
 
-        <div class="second_bar">
-            <!-- drag and drop? -->
-            <div class="categories">
-                <a href="prototype_reminder.html">TOP</a>
-                <a href="prototype_reminder.html">BOTTOM</a>
-                <a href="prototype_reminder.html">DRESS</a>
-                <a href="prototype_reminder.html">OUTERWEAR</a>
-                <a href="prototype_reminder.html">SHOES</a>
-                <a href="prototype_reminder.html">JEWLERY</a>
-            </div>
-            <div class="search_container">
-                <!-- <img/> -->
-                <div>o</div>
-                <input id="search_bar"></input>
-            </div>
-        </div>
-
-        <div class="ad_section">
+        <div class="ad_section" id="bigAdSection">
             <div class="big_ad">
-                <div class="big_ad_description"></div>
+                <img id="ad_img"/>
+                <script>
+                    var ad_width = document.getElementById('bigAdSection').clientWidth;
+                    var ad_height = 400;
+                    document.getElementById('ad_img').src = "https://placehold.co/" + ad_width + "x" + ad_height + "?text=Insert+Ad+Here";
+                </script>
+                <div class="big_ad_text">
+                    <h1 class="bid_ad_title">ADVERT ❤</h1>
+                    <p class="big_ad_description">stuff about said ad here</p>
+                </div>
+                
             </div>
         </div>
 
         <div class="personalisation_box" id="pers_box1">
-            <div class="pers_label" id="plabel1">FEATURED FOR YOU</div>
-
-            <div class="pers_img_container" id="pers_img_cont1">
+            <div class="pers-carousel-container">
+                <h2 class="pers_label" id="plabel1">FEATURED FOR YOU</h2>
+                <div class="carousel-navigation">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <div class="pers-carousel-1" id="persCarouselOne">
+                    <div class="box">
+                        <div class="pers_content">
+                            <p id="persContentTitle">Image desc</p>
+                            <p id="persContentDesc">Desc</p>
+                        </div>
+                    </div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    
+                </div>
+            </div>
+            <!-- <div class="pers_img_container" id="pers_img_cont1">
                 <div class="pers_img">
-                    <img src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"/>
                     <div class="description_container">
                         <div class="img_title">I am a description</div>
                         <div class="img_desc">I am a small description</div>
                     </div>
-                </div>
-                
+                </div> -->    
         </div>
 
+        
 
     <script>
+        // loader
         var loader = document.getElementById("preloader");
         window.addEventListener("load", function(){
         loader.style.display = "none"
-        })
+        });
 
+        // Auto-scroll the carousel
+        const carousel = document.getElementById('persCarouselOne');
+        const boxWidth = carousel.querySelector('.box').offsetWidth;
+        const scrollAmount = boxWidth + 20; // Width of each box + margin-right
+        let scrollInterval;
+
+        function startAutoScroll() {
+        scrollInterval = setInterval(() => {
+            carousel.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+            });
+        }, 2500); 
+
+        // Reset scroll position when reaching the end
+        carousel.addEventListener('scroll', () => {
+            if (carousel.scrollLeft % (boxWidth * 8) === 0) {
+            carousel.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+            }
+        });
+        }
+
+        function stopAutoScroll() {
+        clearInterval(scrollInterval);
+        }
+
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        // Navigation buttons
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        prevButton.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+        });
+
+        nextButton.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+        });
+
+        // Duplicate boxes for infinite scroll
+        const duplicatedBoxes = [...originalBoxes].map(box => {
+            const clone = box.cloneNode(true);
+            const content = clone.querySelector('.content');
+            clone.addEventListener('mouseenter', () => {
+                content.style.transform = 'translateY(0%)';
+            });
+            clone.addEventListener('mouseleave', () => {
+                content.style.transform = 'translateY(100%)';
+            });
+        return clone;
+        });
+
+
+        // Start auto-scrolling
+        startAutoScroll();
     </script>
 
 
