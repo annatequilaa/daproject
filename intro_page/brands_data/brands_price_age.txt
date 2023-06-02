@@ -1,0 +1,30 @@
+below 2000:
+below_16: Nike, H&M, UNIQLO, GAP
+16-21: Nike, Converse, Supreme, UNIQLO 
+22-29: SHEIN, The North Face, Target, Supreme
+30-44: The North Face, Levi's, Banana Republic, Ralph Lauren
+45-54: Under Armour, Tommy Hilfiger, Under Armour, Guess
+55-64: Ralph Lauren, Tommy Hilfiger, Puma, Under Armour
+Above 65: Eileen Fisher, Muji, Ralph Lauren, Chico's
+No preference: Nike, UNIQLO, 
+
+Above 2000:
+below_16: Nike, Zara, H&M, Adidas
+16-21: Nike, Adidas, GU, Calvin Klein
+22-29: The North Face, Levi's, Calvin Klein, Supreme
+30-44: Ralph Lauren, The North Face, Tommy Hilfiger, Levi's
+45-54: Ralph Lauren, Tommy Hilfiger, Under Armour, Guess
+55-64: Ralph Lauren, Calvin Klein, Puma, Guess
+Above 65: Eileen Fisher, Ralph Lauren, Chico's, Shiatzy Chen 
+No preference:
+
+Above 5000: 
+below_16: Nike, Ralph Lauren, Burberry, Chanel
+16-21: Emporio Armani, Gucci, Hermes, Chanel
+22-29: Gucci, Hermes, Louis Vuitton, Gucci
+30-44: Dior, Burberry, Hermes, Louis Vuitton
+45-54: Prada, Dior, Chanel, Louis Vuitton
+55-64: Prada, Hermes, Channel, Louis Vuitton
+Above 65: Prada, Hermes, Channel, Louis Vuitton
+No preference: Louis Vuitton, Gucci, Chanel, Hermes
+
