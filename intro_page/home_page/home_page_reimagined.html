@@ -13,7 +13,7 @@
               <span class="loader2"></span>	
             </div>
         </div>
- 
+
 
         <div class="sticky_bar">
             <div class="top_bar">
@@ -49,53 +49,57 @@
             </div>
         </div>
 
-        <div class="ad_section" id="bigAdSection">
-            <div class="big_ad">
-                <img id="ad_img"/>
-                <script>
-                    var ad_width = document.getElementById('bigAdSection').clientWidth;
-                    var ad_height = 400;
-                    document.getElementById('ad_img').src = "https://placehold.co/" + ad_width + "x" + ad_height + "?text=Insert+Ad+Here";
-                </script>
-                <div class="big_ad_text">
-                    <h1 class="bid_ad_title">ADVERT ❤</h1>
-                    <p class="big_ad_description">stuff about said ad here</p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="personalisation_box" id="pers_box1">
-            <div class="pers-carousel-container">
-                <h2 class="pers_label" id="plabel1">FEATURED FOR YOU</h2>
-                <div class="carousel-navigation">
-                    <button class="prev">&lt;</button>
-                    <button class="next">&gt;</button>
-                </div>
-                <div class="pers-carousel-1" id="persCarouselOne">
-                    <div class="box">
-                        <div class="pers_content">
-                            <p id="persContentTitle">Image desc</p>
-                            <p id="persContentDesc">Desc</p>
-                        </div>
+        <div class="container_for_everything_but_sticky_bar">
+            <div class="ad_section" id="bigAdSection">
+                <div class="big_ad">
+                    <img id="ad_img"/>
+                    <script>
+                        var ad_width = document.getElementById('bigAdSection').clientWidth;
+                        var ad_height = 400;
+                        document.getElementById('ad_img').src = "https://placehold.co/" + ad_width + "x" + ad_height + "?text=Insert+Ad+Here";
+                    </script>
+                    <div class="big_ad_text">
+                        <h1 class="bid_ad_title">ADVERT ❤</h1>
+                        <p class="big_ad_description">stuff about said ad here</p>
                     </div>
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box"></div>
                     
                 </div>
             </div>
-            <!-- <div class="pers_img_container" id="pers_img_cont1">
-                <div class="pers_img">
-                    <div class="description_container">
-                        <div class="img_title">I am a description</div>
-                        <div class="img_desc">I am a small description</div>
+    
+            <div class="personalisation_box" id="pers_box1">
+                <div class="pers-carousel-container">
+                    <h2 class="pers_label" id="plabel1">FEATURED FOR YOU</h2>
+                    <div class="carousel-navigation">
+                        <button class="prev">&lt;</button>
+                        <button class="next">&gt;</button>
                     </div>
-                </div> -->    
+                    <div class="pers-carousel-1" id="persCarouselOne">
+                        <div class="box">
+                            <div class="pers_content">
+                                <p id="persContentTitle">Image desc</p>
+                                <p id="persContentDesc">Desc</p>
+                            </div>
+                        </div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        
+                    </div>
+                </div>
+                <!-- <div class="pers_img_container" id="pers_img_cont1">
+                    <div class="pers_img">
+                        <div class="description_container">
+                            <div class="img_title">I am a description</div>
+                            <div class="img_desc">I am a small description</div>
+                        </div>
+                    </div> -->    
+            </div>
+
+
         </div>
 
         
@@ -106,6 +110,21 @@
         window.addEventListener("load", function(){
         loader.style.display = "none"
         });
+
+        //sticky shrink
+        window.addEventListener('scroll', function() {
+            var shrinkableElement = document.querySelector('.goxip_logo');
+            var stickyElement = document.querySelector('.sticky-bar');
+            var rect = stickyElement.getBoundingClientRect();
+
+            if (rect.top === 0) {
+                shrinkableElement.style.fontSize = '30px'; // Set the desired height when sticky and at the top
+            } else {
+                shrinkableElement.style.fontSize = '50px'; // Set the default height
+            }
+        });
+
+
 
         // Auto-scroll the carousel
         const carousel = document.getElementById('persCarouselOne');

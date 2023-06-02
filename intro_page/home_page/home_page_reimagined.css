@@ -1,6 +1,5 @@
 html, body {
-  overflow-x: hidden;
-height: 3000px;
+  height: 3000px;
 }
 
 .loading_area{
@@ -19,8 +18,8 @@ height: 3000px;
   
 .load_container {
   display:flex;
-  height: 50%;
-  width: 50%;
+  height: 40%;
+  width: 40%;
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -72,12 +71,21 @@ height: 3000px;
     color: black;
 }
 
+.container_for_everything_but_sticky_bar {
+  overflow-x: hidden;
+
+}
+
 /* <----------> */
 
 .sticky_bar {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+  padding-bottom: 4px;
+  z-index: 96;
+  background-color: white;
+  overflow-y: auto
 }
 
 .top_bar{

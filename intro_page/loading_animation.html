@@ -3,17 +3,73 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
         
+		<style>
+						
+			.loading_area{
+				background: #ffffff;
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1000;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+			
+			.load_container {
+			display:flex;
+			height: 50%;
+			width: 50%;
+			position: absolute;
+			align-items: center;
+			justify-content: center;
+			margin: auto ;
+			text-align: center;
+			transform: scale(0.75);
+
+			}
+
+			.loader1, .loader2{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				border: 11px double;
+				border-left-color: #000;
+				border-top-color: #000;
+				border-right-color: #000;
+				border-bottom-color: #000;
+				animation: loadAnim 4s  alternate infinite;
+			}
+			
+			.loader2{
+				animation: loadAnim2 4s;
+				animation-iteration-count: infinite;
+			}
+			
+			
+			@keyframes loadAnim{
+				0%{transform: rotate3d(1,1,1,0deg);}
+				100%{transform: rotate3d(1,1,1,360deg);}
+			}
+			@keyframes loadAnim2{
+				0%{transform: rotate3d(1,1,1,0deg);}
+				100%{transform: rotate3d(1,1,1,-360deg);}
+			}
+
+		</style>
+
     </head>
 
 	<body>
-		<div class="background">
-			<div class="load_container">
-				<span class="loader1"></span>
-	<!-- 			<span class="loader3"></span>
-				<span class="loader4"></span> -->
-				<span class="loader2"></span>					
-			</div>
-			
-		</div>
+        <div class="loading_area" id="preloader">
+            <div class="load_container">
+              <span class="loader1"></span>
+              <span class="loader2"></span>	
+            </div>
+        </div>
 	</body>
 </html>
