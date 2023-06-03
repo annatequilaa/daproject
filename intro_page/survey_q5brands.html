@@ -20,66 +20,66 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      margin-bottom: 10px;
+      margin-right: 30px;
     }
 
     .checkbox-label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 2px solid #000;
-      cursor: pointer;
-      font-size: 16px;
+      position: relative;
+      display: inline-block;
+      margin-right: -20px;
+      width: 20px;
+      height: 20px;
     }
 
     .checkbox-label input[type="checkbox"] {
-      display: none;
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
     }
 
-    .checkbox-label::before {
-      content: "";
-      display: block;
-      width: 14px;
-      height: 14px;
-    }
-
-    .checkbox-label input[type="checkbox"] + .checkmark {
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0px;
+      width: 0px;
       background-color: #000;
     }
 
-    .checkbox-label input[type="checkbox"]:checked + .checkmark {
+    .checkbox-label:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    .checkbox-label input:checked~.checkmark {
       background-color: #000;
     }
 
-    .checkbox-label .checkmark {
-      position: relative;
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background-color: #fff;
-    }
-
-    .checkbox-label .checkmark:after {
+    .checkmark:after {
       content: "";
       position: absolute;
       display: none;
     }
 
-    .checkbox-label input[type="checkbox"]:checked + .checkmark:after {
+    .checkbox-label input:checked~.checkmark:after {
       display: block;
     }
 
-    .checkbox-label .checkmark:after {
-      left: 5px;
-      top: 1px;
+    .checkmark:after {
+      left: 9px;
+      top: 5px;
       width: 5px;
       height: 10px;
       border: solid white;
       border-width: 0 3px 3px 0;
       transform: rotate(45deg);
+    }
+
+    .brand-label {
+      font-size: 22px;
+      user-select: none;
     }
 
     .arrow_ultra_container {
@@ -125,28 +125,38 @@
       <div class="checkbox-container">
         <label class="checkbox-item">
           <input type="checkbox" checked="checked">
-          <span class="checkbox-label"></span>
-          Zara
+          <span class="checkbox-label">
+            <span class="checkmark"></span>
+          </span>
+          <span class="brand-label">Zara</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox">
-          <span class="checkbox-label"></span>
-          H&M
+          <span class="checkbox-label">
+            <span class="checkmark"></span>
+          </span>
+          <span class="brand-label">H&M</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox">
-          <span class="checkbox-label"></span>
-          Nike
+          <span class="checkbox-label">
+            <span class="checkmark"></span>
+          </span>
+          <span class="brand-label">Nike</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox">
-          <span class="checkbox-label"></span>
-          Adidas
+          <span class="checkbox-label">
+            <span class="checkmark"></span>
+          </span>
+          <span class="brand-label">Adidas</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox">
-          <span class="checkbox-label"></span>
-          The North Face
+          <span class="checkbox-label">
+            <span class="checkmark"></span>
+          </span>
+          <span class="brand-label">The North Face</span>
         </label>
       </div>
 
@@ -176,15 +186,14 @@
   </div>
 
   <script>
-    document.getElementById("arrowContainerBox").addEventListener("click", function () {
+    document.getElementById("arrowContainerBox").addEventListener("click", function() {
+      window.location.href = "survey_signup.html";
+    });
+    document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
       window.location.href = "survey_q4price.html";
     });
-    document.getElementById("arrowContainerBox_Left").addEventListener("click", function () {
-      window.location.href = "survey_q2age.html";
-    });
-
     var loader = document.getElementById("preloader");
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
       loader.style.display = "none";
     });
   </script>
