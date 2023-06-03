@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <title>Survey Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="survey_questions.css">
+
+  <style>
+    <style>
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      display: none;
+    }
+
+    .checkbox-label {
+      display: inline-block;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .checkbox-label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      background-color: #fff;
+    }
+
+    .checkbox-label::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #000;
+      display: none;
+    }
+
+    .checkbox-container input[type="checkbox"]:checked+.checkbox-label::before {
+      background-color: #000;
+    }
+
+    .checkbox-container input[type="checkbox"]:checked+.checkbox-label::after {
+      display: block;
+    }
+    
+    .arrow_ultra_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .arrow_container {
+      display: flex;
+      align-items: center;
+      margin-left: 150px;
+    }
+    
+    .arrow_container_left {
+      display: flex;
+      align-items: center;
+      margin-right: 150px;
+    }
+    
+    .page_num {
+      margin: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading_area" id="preloader">
+    <div class="load_container">
+      <span class="loader1"></span>
+      <span class="loader2"></span>
+    </div>
+  </div>
+
+  <div class="goxip_logo">
+    GOXIP
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="welcome_title">
+        What is your gender?
+      </div>
+      <div class="checkbox-container">
+    <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
+    <label class="checkbox-label" for="checkbox1">Checkbox 1</label>
+  </div>
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+    <label class="checkbox-label" for="checkbox2">Checkbox 2</label>
+  </div>
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
+    <label class="checkbox-label" for="checkbox3">Checkbox 3</label>
+  </div>
+        <div class="arrow_ultra_container">
+          <div class="arrow_container" id="arrowContainerBox">
+            <div class="circle">
+              <div class="arrow_right" id="arrow1"></div>
+              <div class="arrow_right" id="arrow2"></div>
+              <div class="arrow_right" id="arrow3"></div>
+            </div>
+          </div>
+
+          <span class="page_num">Page 3/5</span>
+
+          <div class="arrow_container_left" id="arrowContainerBox_Left">
+            <div class="circle">
+              <div class="arrow_left" id="arrow4"></div>
+              <div class="arrow_left" id="arrow5"></div>
+              <div class="arrow_left" id="arrow6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="skip" id="skipButton" href="whoops_msg.html">
+        Skip
+      </a>
+    </div>
+  </div>
+
+  <script>
+    var selectedCircle = null;
+
+    function selectCircle(circleId) {
+      if (selectedCircle !== null) {
+        selectedCircle.classList.remove('selected');
+      }
+      var circel = document.getElementById(circleId);
+      circel.classList.add('selected');
+      selectedCircle = circel;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var circles = document.getElementsByClassName('circel');
+      for (var i = 0; i < circles.length; i++) {
+        circles[i].addEventListener('click', function(e) {
+          selectCircle(e.target.id);
+        });
+      }
+    });
+    document.getElementById("arrowContainerBox").addEventListener("click", function() {
+      window.location.href = "survey_q4price.html";
+    });
+    document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+      window.location.href = "survey_q2age.html";
+    });
+    
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+  </script>
+
+</body>
+
+</html>
