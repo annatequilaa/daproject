@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buy Now!</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="home_page_reimagined.css">
+        <link rel="stylesheet" type="text/css" href="buy_page.css">
+    </head>
+    <body>
+        <div class="loading-area" id="preloader">
+            <div class="load-container">
+              <span class="loader1"></span>
+              <span class="loader2"></span>	
+            </div>
+        </div>
+
+        <div class="sticky-bar">
+            <div class="top-bar">
+                <div class="location-choices">
+                    <a id="region" href="prototype_reminder.html">TAIWAN</a>
+                    <span> | </span>
+                    <a id="language" href="prototype_reminder.html">ENGLISH</a>
+                </div>
+                <a class="goxip-logo" href="home_page_reimagined.html">GOXIP
+                </a>
+                <div class="account-choices">
+                    <a href="prototype_reminder.html">GOXIP CIRCLE</a>
+                    <a class="account" href="prototype_reminder.html">A</a>
+                    <a class="shopping-bag" href="prototype_reminder.html">B</a>
+                </div>
+            </div>
+    
+            <div class="second-bar">
+                <!-- drag and drop? -->
+                <div class="categories">
+                    <a href="prototype_reminder.html">TOP</a>
+                    <a href="prototype_reminder.html">BOTTOM</a>
+                    <a href="prototype_reminder.html">DRESS</a>
+                    <a href="prototype_reminder.html">OUTERWEAR</a>
+                    <a href="prototype_reminder.html">SHOES</a>
+                    <a href="prototype_reminder.html">JEWLERY</a>
+                </div>
+                <div class="search-container">
+                    <!-- <img/> -->
+                    <div>🔍︎ </div>
+                    <input id="search-bar"></input>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-for-everything-but-sticky-bar">
+            <div class="container">
+                <div class="image">
+                  <img src="https://i.imgur.com/cWq0D3D.png" alt="Product Image">
+                </div>
+                <div class="details">
+                  <h2 class="title">Bizzare Goggles with Bunny Hat</h2>
+                  <p class="description">Owned 4 times. <br> Previous owners keep disappearing into another realm, probably to the one this hat comes from.</p>
+                  <button class="buy-button">Buy Now</button>
+                  <button class="like-button">Like</button>
+                </div>
+              </div>
+
+        </div>
+
+        <script>
+            // loader
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+            loader.style.display = "none"
+            });
+
+            //sticky shrink
+            window.addEventListener('scroll', function() {
+                var shrinkableElement = document.querySelector('.goxip-logo');
+                var stickyElement = document.querySelector('.sticky-bar');
+                var rect = stickyElement.getBoundingClientRect();
+
+                if (rect.top === 0) {
+                    shrinkableElement.style.fontSize = '30px'; // Set the desired height when sticky and at the top
+                } else {
+                    shrinkableElement.style.fontSize = '50px'; // Set the default height
+                }
+            });
+        </script>
+    </body>
+</html>
