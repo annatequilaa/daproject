@@ -61,13 +61,9 @@
         });
       });
     }
-
-    const filePath = 'intro_page/user_count.txt';
-
-
-
+    
     document.getElementById("arrowContainerBox").addEventListener("click", function() {
-      incrementAndOverwriteNumber(filePath);
+      incrementAndOverwriteNumber("intro_page/user_count");
       window.location.href = "survey_q1country.html";
     });
 
