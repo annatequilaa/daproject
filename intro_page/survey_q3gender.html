@@ -120,6 +120,11 @@
     document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
       window.location.href = "intro_page.html";
     });
+    
+        var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
   </script>
 
 </body>
