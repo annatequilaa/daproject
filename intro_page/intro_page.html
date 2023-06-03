@@ -40,30 +40,7 @@
   </div> 
 
   <script>
-    const fs = require('fs');
-
-    function incrementAndOverwriteNumber(filePath) {
-      fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-          console.error('Error reading file:', err);
-          return;
-        }
-
-        const currentValue = parseInt(data.trim());
-        const newValue = currentValue + 1;
-
-        fs.writeFile(filePath, newValue.toString(), (err) => {
-          if (err) {
-            console.error('Error writing to file:', err);
-            return;
-          }
-          console.log('Number successfully incremented and overwritten in file:', filePath);
-        });
-      });
-    }
-    
     document.getElementById("arrowContainerBox").addEventListener("click", function() {
-      incrementAndOverwriteNumber("intro_page/user_count");
       window.location.href = "survey_q1country.html";
     });
 
