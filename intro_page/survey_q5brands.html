@@ -8,10 +8,10 @@
 
   <style>
     <style>
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+     .checkbox-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
     }
 
     .checkbox-container input[type="checkbox"] {
@@ -51,11 +51,11 @@
       display: none;
     }
 
-    .checkbox-container input[type="checkbox"]:checked+.checkbox-label::before {
+    .checkbox-container input[type="checkbox"]:checked + .checkbox-label::before {
       background-color: #000;
     }
 
-    .checkbox-container input[type="checkbox"]:checked+.checkbox-label::after {
+    .checkbox-container input[type="checkbox"]:checked + .checkbox-label::after {
       display: block;
     }
     
@@ -99,20 +99,57 @@
       <div class="welcome_title">
         What is your gender?
       </div>
-      <div class="checkbox-container">
-    <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
-    <label class="checkbox-label" for="checkbox1">Checkbox 1</label>
+    <div class="checkbox-container">
+    <div>
+      <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
+      <label class="checkbox-label" for="checkbox1">Checkbox 1</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+      <label class="checkbox-label" for="checkbox2">Checkbox 2</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
+      <label class="checkbox-label" for="checkbox3">Checkbox 3</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox4" name="checkbox" value="checkbox4">
+      <label class="checkbox-label" for="checkbox4">Checkbox 4</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox5" name="checkbox" value="checkbox5">
+      <label class="checkbox-label" for="checkbox5">Checkbox 5</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox6" name="checkbox" value="checkbox6">
+      <label class="checkbox-label" for="checkbox6">Checkbox 6</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox7" name="checkbox" value="checkbox7">
+      <label class="checkbox-label" for="checkbox7">Checkbox 7</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox8" name="checkbox" value="checkbox8">
+      <label class="checkbox-label" for="checkbox8">Checkbox 8</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox9" name="checkbox" value="checkbox9">
+      <label class="checkbox-label" for="checkbox9">Checkbox 9</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox10" name="checkbox" value="checkbox10">
+      <label class="checkbox-label" for="checkbox10">Checkbox 10</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox11" name="checkbox" value="checkbox11">
+      <label class="checkbox-label" for="checkbox11">Checkbox 11</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox12" name="checkbox" value="checkbox12">
+      <label class="checkbox-label" for="checkbox12">Checkbox 12</label>
+    </div>
   </div>
 
-  <div class="checkbox-container">
-    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
-    <label class="checkbox-label" for="checkbox2">Checkbox 2</label>
-  </div>
-
-  <div class="checkbox-container">
-    <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
-    <label class="checkbox-label" for="checkbox3">Checkbox 3</label>
-  </div>
         <div class="arrow_ultra_container">
           <div class="arrow_container" id="arrowContainerBox">
             <div class="circle">
