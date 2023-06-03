@@ -1,130 +1,134 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Survey Page</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="survey_questions.css">
-        <style>
-             .survey-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
 
-    .circle-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+<head>
+  <title>Survey Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="survey_questions.css">
 
-    .circel {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: white;
-      border: 1px solid black;
-      cursor: pointer;
-      margin-right: 5px;
-    }
+   <style>
+       .survey-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-    .selected {
-      background-color: black;
-    }
-        </style>
-    </head>
-    <body>
-      <div class="loading_area" id="preloader">
-        <div class="load_container">
-          <span class="loader1"></span>
-          <span class="loader2"></span>	
-        </div>      
-      </div>
+.circle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
+.circel {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-right: 5px;
+}
 
-        <div class="goxip_logo">
-          GOXIP
-        </div>
-        <div class="container">
-          <div class="content">
-            <div class="welcome_title">
-                Select your country/region: 
-            </div>
-            <div class="survey-container">
-        <h2>What is your gender?</h2>
-        <div class="circle-container">
-        <div class="circel" id="circle1"></div>
-        <label for="circle1">Female</label>
-        </div>
-        <div class="circle-container">
-      <div class="circel" id="circle2"></div>
-      <label for="circle2">Male</label>
+.selected {
+  background-color: black;
+}
+</script>
+</head>
+
+<body>
+  <div class="loading_area" id="preloader">
+    <div class="load_container">
+      <span class="loader1"></span>
+      <span class="loader2"></span>
     </div>
-    <div class="circle-container">
-      <div class="circel" id="circle3"></div>
-      <label for="circle3">Unisex</label>
+  </div>
+
+  <div class="goxip_logo">
+    GOXIP
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="welcome_title">
+        What is your gender?
       </div>
-          <div class="circle-container">
-      <div class="circel" id="circle4"></div>
-      <label for="circle4">No preference/prefer not to say</label>
-    </div>
-
-           </div>
-          <div class="arrow_ultra_container">
-            <div class="arrow_container" id="arrowContainerBox">
-              <div class="circle">
-                <div class="arrow_right" id="arrow1"></div>
-                <div class="arrow_right" id="arrow2"></div>
-                <div class="arrow_right" id="arrow3"></div>
-              </div>
+      <div class="survey-container">
+        <div class="circle-container">
+          <div class="circel" id="circle1"></div>
+          <label for="circle1">Female</label>
+        </div>
+        <div class="circle-container">
+          <div class="circel" id="circle2"></div>
+          <label for="circle2">Male</label>
+        </div>
+        <div class="circle-container">
+          <div class="circel" id="circle3"></div>
+          <label for="circle3">Unisex</label>
+        </div>
+        <div class="circle-container">
+          <div class="circel" id="circle4"></div>
+          <label for="circle4">No preference/prefer not to say</label>
+        </div>
+        <div class="arrow_ultra_container">
+          <div class="arrow_container" id="arrowContainerBox">
+            <div class="circle">
+              <div class="arrow_right" id="arrow1"></div>
+              <div class="arrow_right" id="arrow2"></div>
+              <div class="arrow_right" id="arrow3"></div>
             </div>
-
-            <span class="page_num">Page 1/5</span>
-
-            <div class="arrow_container_left" id="arrowContainerBox_Left">
-              <div class="circle">
-                <div class="arrow_left" id="arrow4"></div>
-                <div class="arrow_left" id="arrow5"></div>
-                <div class="arrow_left" id="arrow6"></div>
-              </div>
-            </div> 
           </div>
-        </div>  
+
+          <span class="page_num">Page 1/5</span>
+
+          <div class="arrow_container_left" id="arrowContainerBox_Left">
+            <div class="circle">
+              <div class="arrow_left" id="arrow4"></div>
+              <div class="arrow_left" id="arrow5"></div>
+              <div class="arrow_left" id="arrow6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <a class="skip" id="skipButton" href="whoops_msg.html">
         Skip
       </a>
-    </body>
+</body>
 
-    <script>
-       var selectedCircle = null;
+<script>
+  var selectedCircle = null;
 
-    function selectCircle(circleId) {
-      if (selectedCircle !== null) {
-        selectedCircle.classList.remove('selected');
-      }
-      var circel = document.getElementById(circleId);
-      circel.classList.add('selected');
-      selectedCircle = circel;
+  function selectCircle(circleId) {
+    if (selectedCircle !== null) {
+      selectedCircle.classList.remove('selected');
     }
-    document.addEventListener('DOMContentLoaded', function() {
-      var circles = document.getElementsByClassName('circel');
-      for (var i = 0; i < circles.length; i++) {
-        circles[i].addEventListener('click', function(e) {
-          selectCircle(e.target.id);
-        });
-      }
-    });
-            document.getElementById("arrowContainerBox").addEventListener("click", function() {
-                window.location.href = "survey_q4price.html";
-            });
-            document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
-                window.location.href = "survey_q2age.html";
-            });
-
-
-    </script>
+    var circel = document.getElementById(circleId);
+    circel.classList.add('selected');
+    selectedCircle = circel;
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var circles = document.getElementsByClassName('circel');
+    for (var i = 0; i < circles.length; i++) {
+      circles[i].addEventListener('click', function(e) {
+        selectCircle(e.target.id);
+      });
+    }
+  });
+  document.getElementById("arrowContainerBox").addEventListener("click", function() {
+    window.location.href = "survey_q2age.html";
+  });
+  document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+    window.location.href = "intro_page.html";
+  });
+  $(document).ready(function() {
+    $('.select2').select2();
+  });
+  var loader = document.getElementById("preloader");
+  window.addEventListener("load", function() {
+    loader.style.display = "none"
+  })
+</script>
 
 </html>
