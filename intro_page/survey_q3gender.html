@@ -3,260 +3,30 @@
     <head>
         <title>Survey Page</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
         <link rel="stylesheet" type="text/css" href="survey_questions.css">
-          <style>
-           
-    body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  .loading_area{
-    background: #ffffff;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-.load_container {
-  display:flex;
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  margin: auto ;
-  text-align: center;
-  transform: scale(0.75);
-
-}
-
-  .loader1, .loader2{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 11px double;
-    border-left-color: #000;
-    border-top-color: #000;
-    border-right-color: #000;
-    border-bottom-color: #000;
-    animation: loadAnim 4s  alternate infinite;
-  }
-  
-  .loader2{
-    animation: loadAnim2 4s;
-    animation-iteration-count: infinite;
-  }
-  
-  
-  @keyframes loadAnim{
-    0%{transform: rotate3d(1,1,1,0deg);}
-    100%{transform: rotate3d(1,1,1,360deg);}
-  }
-  @keyframes loadAnim2{
-    0%{transform: rotate3d(1,1,1,0deg);}
-    100%{transform: rotate3d(1,1,1,-360deg);}
-  }
-
-  .container {
-    width: 70%;
-    height: 70%;
-    border: 2px solid transparent;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .goxip_logo {
-    font-size: 32px;
-    font-weight: bold;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-decoration: underline;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 20px;
-  }
-  
-  .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .welcome_title {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .skip {
-    font-size: 12px;
-    color: black;
-    margin-top: 20px;
-  }
-
-  .arrow_container {
-    width: 100px;
-    height: 100px;
-    z-index: 10;
-    text-align: center;
-    transform: scale(0.5);
-    margin-top: 20px;
-    position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle; */
-    top: -25%;
-  }
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 4px solid black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: -100;
-  }
-
-  .circle, .arrow_right{
-    filter: invert(0); /* Initial state with no inversion */
-    transition: filter 0.3s ease;
-  }
-
-  .arrow_right {
-    border: solid black;
-    height: 12px;
-    width: 12px;
-    border-width: 0 4px 4px 0;
-    display: inline-block;
-    padding: 2px;
-    transform: rotate(-45deg);
-    position: absolute;
-    z-index: 5;
-  }
-
-  #arrow1 {
-    top: 50%;
-    left: 26%;
-    transform: translate(-70%, -50%) rotate(-45deg);
-    animation: arrowAnimation1 1.6s infinite;
-  }
-
-  #arrow2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-70%, -50%) rotate(-45deg);
-    animation: arrowAnimation2 1.6s infinite;
-  }
-
-  #arrow3 {
-    top: 50%;
-    left: 74%;
-    transform: translate(-70%, -50%) rotate(-45deg);
-    animation: arrowAnimation3 1.6s infinite;
-  }
-
-  .arrow_container:hover { 
-    filter: invert(1);
-  }
-
-  .arrow_container:not(:hover) #arrow1, .arrow_container:not(:hover) #arrow2, .arrow_container:not(:hover) #arrow3 {
-    animation-play-state: paused;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes arrowAnimation1 {
-    0%, 100% {
-      transform: translate(-70%, -50%) rotate(-45deg);
-    }
-    50% {
-      left: 60%;
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-  }
-
-  @keyframes arrowAnimation2 {
-    0%, 100% {
-      transform: translate(-70%, -50%) rotate(-45deg);
-    }
-    50% {
-      left: 64%;
-      transform: translate(-6%, -50%) rotate(-45deg);
-    }
-  }
-
-  @keyframes arrowAnimation3 {
-    0%, 100% {
-      transform: translate(-70%, -50%) rotate(-45deg);
-    }
-    50% {
-      left: 74%;
-      transform: translate(2%, -50%) rotate(-45deg);
-    }
-  }
-
-    .survey-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .circle-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .circel {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: white;
-      border: 1px solid black;
-      cursor: pointer;
-      margin-right: 5px;
-    }
-
-    .selected {
-      background-color: black;
-    }
-  </style>
 
     </head>
     <body>
+      <div class="loading_area" id="preloader">
+        <div class="load_container">
+          <span class="loader1"></span>
+          <span class="loader2"></span>	
+        </div>      
+      </div>
+
+
         <div class="goxip_logo">
-            GOXIP
+          GOXIP
         </div>
-    <div class="survey-container">
+        <div class="container">
+          <div class="content">
+            <div class="welcome_title">
+                Select your country/region: 
+            </div>
+            <div class="survey-container">
         <h2>What is your gender?</h2>
         <div class="circle-container">
         <div class="circel" id="circle1"></div>
@@ -269,37 +39,40 @@
     <div class="circle-container">
       <div class="circel" id="circle3"></div>
       <label for="circle3">Unisex</label>
-    </div>
-    <div class="circle-container">
+      </div>
+          <div class="circle-container">
       <div class="circel" id="circle4"></div>
       <label for="circle4">No preference/prefer not to say</label>
     </div>
-    <div class="arrow_ultra_container">
-        <div class="arrow_container" id="arrowContainerBox">
-          <div class="circle">
-            <div class="arrow_right" id="arrow1"></div>
-            <div class="arrow_right" id="arrow2"></div>
-            <div class="arrow_right" id="arrow3"></div>
+
+           </div>
+          <div class="arrow_ultra_container">
+            <div class="arrow_container" id="arrowContainerBox">
+              <div class="circle">
+                <div class="arrow_right" id="arrow1"></div>
+                <div class="arrow_right" id="arrow2"></div>
+                <div class="arrow_right" id="arrow3"></div>
+              </div>
+            </div>
+
+            <span class="page_num">Page 1/5</span>
+
+            <div class="arrow_container_left" id="arrowContainerBox_Left">
+              <div class="circle">
+                <div class="arrow_left" id="arrow4"></div>
+                <div class="arrow_left" id="arrow5"></div>
+                <div class="arrow_left" id="arrow6"></div>
+              </div>
+            </div> 
           </div>
-        </div>
+        </div>  
+      <a class="skip" id="skipButton" href="whoops_msg.html">
+        Skip
+      </a>
+    </body>
 
-        <span class="page_num">Page 2/5</span>
-
-        <div class="arrow_container_left" id="arrowContainerBox_Left">
-          <div class="circle">
-            <div class="arrow_left" id="arrow4"></div>
-            <div class="arrow_left" id="arrow5"></div>
-            <div class="arrow_left" id="arrow6"></div>
-          </div>
-        </div> 
-      </div>
-
-        <a class="skip" id="skipButton" href="home_page/home_page.html">
-            Skip
-        </a>
-
-        <script>
-               var selectedCircle = null;
+    <script>
+       var selectedCircle = null;
 
     function selectCircle(circleId) {
       if (selectedCircle !== null) {
@@ -323,7 +96,8 @@
             document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
                 window.location.href = "survey_q2age.html";
             });
-        </script>
 
-    </body>
+
+    </script>
+
 </html>
