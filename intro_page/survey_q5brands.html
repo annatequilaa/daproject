@@ -7,75 +7,76 @@
   <link rel="stylesheet" type="text/css" href="survey_questions.css">
 
   <style>
-  .checkbox-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-  }
+    .checkbox-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
 
-  .checkbox-container input[type="checkbox"] {
-    display: none;
-  }
+    .checkbox-container input[type="checkbox"] {
+      display: none;
+    }
 
-  .checkbox-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid #000;
-    cursor: pointer;
-    font-size: 16px;
-  }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-  .checkbox-label::before {
-    content: "";
-    display: block;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: #fff;
-  }
+    .checkbox-label::before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
 
-  .checkbox-label::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #000;
-  }
+    .checkbox-label::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #000;
+    }
 
-  .checkbox-container input[type="checkbox"]:checked + .checkbox-label::after {
-    transform: translate(-50%, -50%) scale(1);
-  }
-    
+    .checkbox-container input[type="checkbox"]:checked + .checkbox-label::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
     .arrow_ultra_container {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .arrow_container {
       display: flex;
       align-items: center;
       margin-left: 150px;
     }
-    
+
     .arrow_container_left {
       display: flex;
       align-items: center;
       margin-right: 150px;
     }
-    
+
     .page_num {
       margin: 10;
     }
+  </style>
 </head>
 
 <body>
@@ -94,81 +95,80 @@
       <div class="welcome_title">
         What is your gender?
       </div>
-    <div class="checkbox-container">
-    <div>
-      <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
-      <label class="checkbox-label" for="checkbox1">Checkbox 1</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
-      <label class="checkbox-label" for="checkbox2">Checkbox 2</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
-      <label class="checkbox-label" for="checkbox3">Checkbox 3</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox4" name="checkbox" value="checkbox4">
-      <label class="checkbox-label" for="checkbox4">Checkbox 4</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox5" name="checkbox" value="checkbox5">
-      <label class="checkbox-label" for="checkbox5">Checkbox 5</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox6" name="checkbox" value="checkbox6">
-      <label class="checkbox-label" for="checkbox6">Checkbox 6</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox7" name="checkbox" value="checkbox7">
-      <label class="checkbox-label" for="checkbox7">Checkbox 7</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox8" name="checkbox" value="checkbox8">
-      <label class="checkbox-label" for="checkbox8">Checkbox 8</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox9" name="checkbox" value="checkbox9">
-      <label class="checkbox-label" for="checkbox9">Checkbox 9</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox10" name="checkbox" value="checkbox10">
-      <label class="checkbox-label" for="checkbox10">Checkbox 10</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox11" name="checkbox" value="checkbox11">
-      <label class="checkbox-label" for="checkbox11">Checkbox 11</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox12" name="checkbox" value="checkbox12">
-      <label class="checkbox-label" for="checkbox12">Checkbox 12</label>
-    </div>
-  </div>
+      <div class="checkbox-container">
+        <div>
+          <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
+          <label class="checkbox-label" for="checkbox1">Checkbox 1</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+          <label class="checkbox-label" for="checkbox2">Checkbox 2</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
+          <label class="checkbox-label" for="checkbox3">Checkbox 3</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox4" name="checkbox" value="checkbox4">
+          <label class="checkbox-label" for="checkbox4">Checkbox 4</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox5" name="checkbox" value="checkbox5">
+          <label class="checkbox-label" for="checkbox5">Checkbox 5</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox6" name="checkbox" value="checkbox6">
+          <label class="checkbox-label" for="checkbox6">Checkbox 6</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox7" name="checkbox" value="checkbox7">
+          <label class="checkbox-label" for="checkbox7">Checkbox 7</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox8" name="checkbox" value="checkbox8">
+          <label class="checkbox-label" for="checkbox8">Checkbox 8</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox9" name="checkbox" value="checkbox9">
+          <label class="checkbox-label" for="checkbox9">Checkbox 9</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox10" name="checkbox" value="checkbox10">
+          <label class="checkbox-label" for="checkbox10">Checkbox 10</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox11" name="checkbox" value="checkbox11">
+          <label class="checkbox-label" for="checkbox11">Checkbox 11</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox12" name="checkbox" value="checkbox12">
+          <label class="checkbox-label" for="checkbox12">Checkbox 12</label>
+        </div>
+      </div>
 
-        <div class="arrow_ultra_container">
-          <div class="arrow_container" id="arrowContainerBox">
-            <div class="circle">
-              <div class="arrow_right" id="arrow1"></div>
-              <div class="arrow_right" id="arrow2"></div>
-              <div class="arrow_right" id="arrow3"></div>
-            </div>
+      <div class="arrow_ultra_container">
+        <div class="arrow_container" id="arrowContainerBox">
+          <div class="circle">
+            <div class="arrow_right" id="arrow1"></div>
+            <div class="arrow_right" id="arrow2"></div>
+            <div class="arrow_right" id="arrow3"></div>
           </div>
+        </div>
 
-          <span class="page_num">Page 3/5</span>
+        <span class="page_num">Page 3/5</span>
 
-          <div class="arrow_container_left" id="arrowContainerBox_Left">
-            <div class="circle">
-              <div class="arrow_left" id="arrow4"></div>
-              <div class="arrow_left" id="arrow5"></div>
-              <div class="arrow_left" id="arrow6"></div>
-            </div>
+        <div class="arrow_container_left" id="arrowContainerBox_Left">
+          <div class="circle">
+            <div class="arrow_left" id="arrow4"></div>
+            <div class="arrow_left" id="arrow5"></div>
+            <div class="arrow_left" id="arrow6"></div>
           </div>
         </div>
       </div>
-      <a class="skip" id="skipButton" href="whoops_msg.html">
-        Skip
-      </a>
     </div>
+    <a class="skip" id="skipButton" href="whoops_msg.html">
+      Skip
+    </a>
   </div>
 
   <script>
@@ -182,23 +182,23 @@
       circel.classList.add('selected');
       selectedCircle = circel;
     }
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var circles = document.getElementsByClassName('circel');
       for (var i = 0; i < circles.length; i++) {
-        circles[i].addEventListener('click', function(e) {
+        circles[i].addEventListener('click', function (e) {
           selectCircle(e.target.id);
         });
       }
     });
-    document.getElementById("arrowContainerBox").addEventListener("click", function() {
+    document.getElementById("arrowContainerBox").addEventListener("click", function () {
       window.location.href = "survey_q4price.html";
     });
-    document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+    document.getElementById("arrowContainerBox_Left").addEventListener("click", function () {
       window.location.href = "survey_q2age.html";
     });
-    
+
     var loader = document.getElementById("preloader");
-    window.addEventListener("load", function(){
+    window.addEventListener("load", function () {
       loader.style.display = "none"
     })
   </script>
