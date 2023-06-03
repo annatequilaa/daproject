@@ -11,10 +11,10 @@
       background-color: #f1f1f1;
     }
 
-     .logo-container {
+    .logo-container {
       padding: 20px;
     }
-    
+
     .container {
       max-width: 400px;
       margin: 0 auto;
@@ -69,13 +69,12 @@
 </head>
 
 <body>
- <div class="logo-container">
-  <div class="goxip_logo"> 
-  </div>
+  <div class="logo-container">
+    <div class="goxip_logo">
+      GOXIP
+    </div>
   </div>
   <div class="container">
-    GOXIP
-  </div>
     <h2>Sign Up</h2>
     <form>
       <label for="username">Username:</label>
@@ -88,7 +87,7 @@
       <input type="password" id="confirm-password" name="confirm-password" required>
 
       <div class="button-container">
-        <button type="submit" href = "home_page/home_page.html">Sign Up</button>
+        <button type="submit" href="home_page/home_page.html">Sign Up</button>
       </div>
     </form>
 
@@ -97,41 +96,39 @@
     </div>
   </div>
   <div class="arrow_ultra_container">
-        <div class="arrow_container" id="arrowContainerBox">
-          <div class="circle">
-            <div class="arrow_right" id="arrow1"></div>
-            <div class="arrow_right" id="arrow2"></div>
-            <div class="arrow_right" id="arrow3"></div>
-          </div>
-        </div>
-
-        <span class="page_num">Page 5/5</span>
-
-        <div class="arrow_container_left" id="arrowContainerBox_Left">
-          <div class="circle">
-            <div class="arrow_left" id="arrow4"></div>
-            <div class="arrow_left" id="arrow5"></div>
-            <div class="arrow_left" id="arrow6"></div>
-          </div>
-        </div>
+    <div class="arrow_container" id="arrowContainerBox">
+      <div class="circle">
+        <div class="arrow_right" id="arrow1"></div>
+        <div class="arrow_right" id="arrow2"></div>
+        <div class="arrow_right" id="arrow3"></div>
       </div>
     </div>
-    <a class="skip" id="skipButton" href="whoops_msg.html">
-      Skip
-    </a>
+
+    <span class="page_num">Page 5/5</span>
+
+    <div class="arrow_container_left" id="arrowContainerBox_Left">
+      <div class="circle">
+        <div class="arrow_left" id="arrow4"></div>
+        <div class="arrow_left" id="arrow5"></div>
+        <div class="arrow_left" id="arrow6"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <a class="skip" id="skipButton" href="whoops_msg.html">
+    Skip
+  </a>
   </div>
 
   <script>
-
-    document.getElementById("arrowContainerBox").addEventListener("click", function () {
+    document.getElementById("arrowContainerBox").addEventListener("click", function() {
       window.location.href = "survey_q4price.html";
     });
-    document.getElementById("arrowContainerBox_Left").addEventListener("click", function () {
+    document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
       window.location.href = "survey_q2age.html";
     });
-
     var loader = document.getElementById("preloader");
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
       loader.style.display = "none";
     });
   </script>
