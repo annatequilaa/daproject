@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thank You Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="home_page_reimagined.css">
+  <style>
+    body {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Roboto", sans-serif;
+    }
+    
+    .container {
+      text-align: center;
+      transform: translateY(200%);
+    }
+    
+    .message {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .back-button {
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <div class="loading-area" id="preloader">
+        <div class="load-container">
+          <span class="loader1"></span>
+          <span class="loader2"></span>	
+        </div>
+    </div>
+
+    <div class="sticky-bar">
+        <div class="top-bar">
+            <div class="location-choices">
+                <a id="region" href="prototype_reminder.html">TAIWAN</a>
+                <span> | </span>
+                <a id="language" href="prototype_reminder.html">ENGLISH</a>
+            </div>
+            <a class="goxip-logo" href="home_page_reimagined.html">GOXIP
+            </a>
+            <div class="account-choices">
+                <a href="prototype_reminder.html">GOXIP CIRCLE</a>
+                <a class="account" href="prototype_reminder.html">A</a>
+                <a class="shopping-bag" href="prototype_reminder.html">B</a>
+            </div>
+        </div>
+
+        <div class="second-bar">
+            <!-- drag and drop? -->
+            <div class="categories">
+                <a href="prototype_reminder.html">TOP</a>
+                <a href="prototype_reminder.html">BOTTOM</a>
+                <a href="prototype_reminder.html">DRESS</a>
+                <a href="prototype_reminder.html">OUTERWEAR</a>
+                <a href="prototype_reminder.html">SHOES</a>
+                <a href="prototype_reminder.html">JEWLERY</a>
+            </div>
+            <div class="search-container">
+                <!-- <img/> -->
+                <div>🔍︎ </div>
+                <input id="search-bar"></input>
+            </div>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="message">
+      Thanks for buying this product :D
+    </div>
+    <a class="back-button" href="home_page_reimagined.html">Back to Home</a>
+  </div>
+
+  <script>
+    // loader
+    var loader = document.getElementById("preloader");
+                window.addEventListener("load", function(){
+                loader.style.display = "none"
+                });
+
+                //sticky shrink
+                window.addEventListener('scroll', function() {
+                    var shrinkableElement = document.querySelector('.goxip-logo');
+                    var stickyElement = document.querySelector('.sticky-bar');
+                    var rect = stickyElement.getBoundingClientRect();
+
+                    if (rect.top === 0) {
+                        shrinkableElement.style.fontSize = '30px'; // Set the desired height when sticky and at the top
+                    } else {
+                        shrinkableElement.style.fontSize = '50px'; // Set the default height
+                    }
+                });
+
+  </script>
+
+
+</body>
+</html>
