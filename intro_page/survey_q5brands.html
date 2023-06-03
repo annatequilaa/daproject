@@ -43,25 +43,73 @@
   display: block;
   width: 14px;
   height: 14px;
-  border-radius: 50%;
-  background-color: #fff;
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.checkbox-label::after {
-  content: "";
+/* Hide the browser's default checkbox */
+.container input {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
   background-color: #000;
 }
 
-.checkbox-label input[type="checkbox"]:checked + .checkbox-label::after {
-  transform: translate(-50%, -50%) scale(1);
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
     .arrow_ultra_container {
       display: flex;
@@ -101,81 +149,29 @@
   <div class="container">
     <div class="content">
       <div class="welcome_title">
-        What is your gender?
+        WWhat brands do you prefer?
       </div>
       <div class="checkbox-container">
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox1">
-      <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
-      Zara
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox2">
-      <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
-      UNIQLO
-    </label>
-  </div>
-           <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox3">
-      <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
-      H&M
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox4">
-      <input type="checkbox" id="checkbox4" name="checkbox" value="checkbox4">
-      Nike
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox5">
-      <input type="checkbox" id="checkbox5" name="checkbox" value="checkbox5">
-      Adidas
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox6">
-      <input type="checkbox" id="checkbox6" name="checkbox" value="checkbox6">
-      The North Face
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox7">
-      <input type="checkbox" id="checkbox7" name="checkbox" value="checkbox7">
-      Forever 21
-    </label>
-  </div>
-         <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox8">
-      <input type="checkbox" id="checkbox8" name="checkbox" value="checkbox8">
-      Mango
-    </label>
-  </div>
-         <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox9">
-      <input type="checkbox" id="checkbox9" name="checkbox" value="checkbox9">
-      Pull&Bear
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox10">
-      <input type="checkbox" id="checkbox10" name="checkbox" value="checkbox10">
-      GAP
-    </label>
-  </div>
-         <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox11">
-      <input type="checkbox" id="checkbox11" name="checkbox" value="checkbox11">
-      GU
-    </label>
-  </div>
-          <div class="checkbox-item">
-    <label class="checkbox-label" for="checkbox12">
-      <input type="checkbox" id="checkbox12" name="checkbox" value="checkbox12">
-      Converse
-    </label>
-  </div>
+         <label class="container">Zara
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+<label class="container">H&M
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Nike
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Adidas
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">The North Face
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
       </div>
 
       <div class="arrow_ultra_container">
@@ -204,24 +200,24 @@
   </div>
 
   <script>
-    var selectedCircle = null;
+//     var selectedCircle = null;
 
-    function selectCircle(circleId) {
-      if (selectedCircle !== null) {
-        selectedCircle.classList.remove('selected');
-      }
-      var circle = document.getElementById(circleId); // Fixed typo here
-      circle.classList.add('selected');
-      selectedCircle = circle;
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      var circles = document.getElementsByClassName('circle'); // Changed 'circel' to 'circle'
-      for (var i = 0; i < circles.length; i++) {
-        circles[i].addEventListener('click', function (e) {
-          selectCircle(e.target.id);
-        });
-      }
-    });
+//     function selectCircle(circleId) {
+//       if (selectedCircle !== null) {
+//         selectedCircle.classList.remove('selected');
+//       }
+//       var circle = document.getElementById(circleId); // Fixed typo here
+//       circle.classList.add('selected');
+//       selectedCircle = circle;
+//     }
+//     document.addEventListener('DOMContentLoaded', function () {
+//       var circles = document.getElementsByClassName('circle'); // Changed 'circel' to 'circle'
+//       for (var i = 0; i < circles.length; i++) {
+//         circles[i].addEventListener('click', function (e) {
+//           selectCircle(e.target.id);
+//         });
+//       }
+//     });
     document.getElementById("arrowContainerBox").addEventListener("click", function () {
       window.location.href = "survey_q4price.html";
     });
