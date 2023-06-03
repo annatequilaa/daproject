@@ -33,6 +33,28 @@
     .selected {
       background-color: black;
     }
+    
+    .arrow_ultra_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .arrow_container {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    
+    .arrow_container_left {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+    
+    .page_num {
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -121,7 +143,7 @@
       window.location.href = "intro_page.html";
     });
     
-        var loader = document.getElementById("preloader");
+    var loader = document.getElementById("preloader");
     window.addEventListener("load", function(){
       loader.style.display = "none"
     })
