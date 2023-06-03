@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Survey Page</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="survey_questions.css">
-          <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      padding: 20px;
-    }
 
+<head>
+  <title>Survey Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="survey_questions.css">
+
+  <style>
     .survey-container {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      margin: auto;
     }
 
     .circle-container {
@@ -41,54 +34,92 @@
     .selected {
       background-color: black;
     }
+    
+    .arrow_ultra_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .arrow_container {
+      display: flex;
+      align-items: center;
+      margin-left: 150px;
+    }
+    
+    .arrow_container_left {
+      display: flex;
+      align-items: center;
+      margin-right: 150px;
+    }
+    
+    .page_num {
+      margin: 10;
+    }
   </style>
+</head>
 
-    </head>
-    <body>
-        <div class="goxip_logo">
-            GOXIP
+<body>
+  <div class="loading_area" id="preloader">
+    <div class="load_container">
+      <span class="loader1"></span>
+      <span class="loader2"></span>
+    </div>
+  </div>
+
+  <div class="goxip_logo">
+    GOXIP
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="welcome_title">
+        What is your gender?
+      </div>
+      <div class="survey-container">
+        <div class="circle-container">
+          <div class="circel" id="circle1"></div>
+          <label for="circle1">Female</label>
         </div>
- <div class="survey-container">
-    <h2>What is your age group?</h2>
-    <div class="circle-container">
-      <div class="circel" id="circle1"></div>
-      <label for="circle1">Female</label>
-    </div>
-    <div class="circle-container">
-      <div class="circel" id="circle2"></div>
-      <label for="circle2">Male</label>
-    </div>
-    <div class="circle-container">
-      <div class="circel" id="circle3"></div>
-      <label for="circle3">Unisex</label>
-    </div>
-    <div class="circle-container">
-      <div class="circel" id="circle4"></div>
-      <label for="circle4">No preference/prefer not to say</label>
-    </div>
+        <div class="circle-container">
+          <div class="circel" id="circle2"></div>
+          <label for="circle2">Male</label>
+        </div>
+        <div class="circle-container">
+          <div class="circel" id="circle3"></div>
+          <label for="circle3">Unisex</label>
+        </div>
+        <div class="circle-container">
+          <div class="circel" id="circle4"></div>
+          <label for="circle4">No preference/prefer not to say</label>
+        </div>
         <div class="arrow_ultra_container">
-            <div class="arrow_container" id="arrowContainerBox">
-                <div class="circle">
-                    <div class="arrow_right" id="arrow1"></div>
-                    <div class="arrow_right" id="arrow2"></div>
-                    <div class="arrow_right" id="arrow3"></div>
-                </div>
+          <div class="arrow_container" id="arrowContainerBox">
+            <div class="circle">
+              <div class="arrow_right" id="arrow1"></div>
+              <div class="arrow_right" id="arrow2"></div>
+              <div class="arrow_right" id="arrow3"></div>
             </div>
-            <div class="arrow_container_left" id="arrowContainerBox_Left">
-                <div class="circle">
-                    <div class="arrow_left" id="arrow4"></div>
-                    <div class="arrow_left" id="arrow5"></div>
-                    <div class="arrow_left" id="arrow6"></div>
-                </div>
-            </div> 
+          </div>
+
+          <span class="page_num">Page 3/5</span>
+
+          <div class="arrow_container_left" id="arrowContainerBox_Left">
+            <div class="circle">
+              <div class="arrow_left" id="arrow4"></div>
+              <div class="arrow_left" id="arrow5"></div>
+              <div class="arrow_left" id="arrow6"></div>
+            </div>
+          </div>
         </div>
+      </div>
+      <a class="skip" id="skipButton" href="whoops_msg.html">
+        Skip
+      </a>
+    </div>
+  </div>
 
-        <a class="skip" id="skipButton" href="home_page/home_page.html">
-            Skip
-        </a>
-
-        <script>
-               var selectedCircle = null;
+  <script>
+    var selectedCircle = null;
 
     function selectCircle(circleId) {
       if (selectedCircle !== null) {
@@ -106,13 +137,19 @@
         });
       }
     });
-            document.getElementById("arrowContainerBox").addEventListener("click", function() {
-                window.location.href = "survey_q4price.html";
-            });
-            document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
-                window.location.href = "survey_q2age.html";
-            });
-        </script>
+    document.getElementById("arrowContainerBox").addEventListener("click", function() {
+      window.location.href = "survey_q4price.html";
+    });
+    document.getElementById("arrowContainerBox_Left").addEventListener("click", function() {
+      window.location.href = "survey_q2age.html";
+    });
+    
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+  </script>
 
-    </body>
+</body>
+
 </html>
