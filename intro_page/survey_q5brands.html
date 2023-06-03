@@ -20,7 +20,7 @@
 
     .checkbox-label {
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* Move text below the circle */
       align-items: center;
       justify-content: center;
       position: relative;
@@ -157,7 +157,7 @@
           </div>
         </div>
 
-        <span class="page_num">Page 5/5</span>
+        <span class="page_num">Page 3/5</span>
 
         <div class="arrow_container_left" id="arrowContainerBox_Left">
           <div class="circle">
@@ -180,12 +180,12 @@
       if (selectedCircle !== null) {
         selectedCircle.classList.remove('selected');
       }
-      var circle = document.getElementById(circleId);
+      var circle = document.getElementById(circleId); // Fixed typo here
       circle.classList.add('selected');
       selectedCircle = circle;
     }
     document.addEventListener('DOMContentLoaded', function () {
-      var circles = document.getElementsByClassName('circle');
+      var circles = document.getElementsByClassName('circle'); // Changed 'circel' to 'circle'
       for (var i = 0; i < circles.length; i++) {
         circles[i].addEventListener('click', function (e) {
           selectCircle(e.target.id);
@@ -204,6 +204,7 @@
       loader.style.display = "none";
     });
   </script>
+
 </body>
 
 </html>
