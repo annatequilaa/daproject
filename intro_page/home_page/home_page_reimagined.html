@@ -16,24 +16,24 @@
 
         <script>
             
-// functions for setting cookies:
-function setCookie(c_name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate() + exdays);var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());document.cookie=c_name + "=" + c_value;}
-function getCookie(c_name){var c_value = document.cookie;var c_start = c_value.indexOf(" " + c_name + "=");if (c_start == -1){c_start = c_value.indexOf(c_name + "=");}if (c_start == -1){c_value = null;}else{c_start = c_value.indexOf("=", c_start) + 1;var c_end = c_value.indexOf(";", c_start);if (c_end == -1){c_end = c_value.length;}c_value = unescape(c_value.substring(c_start,c_end));}return c_value;}
+            // functions for setting cookies:
+            function setCookie(c_name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate() + exdays);var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());document.cookie=c_name + "=" + c_value;}
+            function getCookie(c_name){var c_value = document.cookie;var c_start = c_value.indexOf(" " + c_name + "=");if (c_start == -1){c_start = c_value.indexOf(c_name + "=");}if (c_start == -1){c_value = null;}else{c_start = c_value.indexOf("=", c_start) + 1;var c_end = c_value.indexOf(";", c_start);if (c_end == -1){c_end = c_value.length;}c_value = unescape(c_value.substring(c_start,c_end));}return c_value;}
 
-// function to check if the user is visiting for the first time
-function checkSession(){
-   var c = getCookie("visited");
-   if (c === "yes") {
-     alert("Welcome back!");
-   } else {
-     alert("Welcome new visitor!");
-    //  redirects user to survey page
-     window.location.href = 'https://annatequilaa.github.io/daproject/intro_page/intro_page.html';
-   }
-   setCookie("visited", "yes", null); // expire in never; or use a number to set expire date
-}
+            // function to check if the user is visiting for the first time
+            function checkSession(){
+            var c = getCookie("visited");
+            if (c === "yes") {
+                alert("Welcome back!");
+            } else {
+                alert("Welcome new visitor!");
+                //  redirects user to survey page
+                window.location.href = 'https://annatequilaa.github.io/daproject/intro_page/intro_page.html';
+            }
+            setCookie("visited", "yes", null); // expire in never; or use a number to set expire date
+            }
 
-checkSession();
+            checkSession();
         </script>
 
         <div class="sticky-bar">
@@ -174,7 +174,7 @@ checkSession();
             </div>
             <div class="personalisation-box" id="pers-box1">
                 <div class="pers-carousel-container" id="cont1">
-                    <h2 class="pers-label" id="plabel1">WHERE YOU LEFT OFF</h2>
+                    <h2 class="pers-label" id="plabel1">TRENDING IN YOUR REGION</h2>
                     <div class="carousel-navigation" id="nav1">
                         <button class="prev1">&lt;</button>
                         <button class="next1">&gt;</button>
@@ -344,7 +344,7 @@ checkSession();
             </div>
             <div class="personalisation-box" id="pers-box1">
                 <div class="pers-carousel-container" id="cont3">
-                    <h2 class="pers-label" id="plabel1">TRENDING IN YOUR REGION</h2>
+                    <h2 class="pers-label" id="plabel1">WHERE YOU LEFT OFF</h2>
                     <div class="carousel-navigation" id="nav3">
                         <button class="prev3">&lt;</button>
                         <button class="next3">&gt;</button>
