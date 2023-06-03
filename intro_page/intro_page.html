@@ -64,11 +64,11 @@ function incrementAndOverwriteNumber(filePath) {
 
 const filePath = 'intro_page/user_count.txt';
 
-incrementAndOverwriteNumber(filePath);
 
 
     document.getElementById("arrowContainerBox").addEventListener("click", function() {
       window.location.href = "survey_q1country.html";
+      incrementAndOverwriteNumber(filePath);
     });
 
     var loader = document.getElementById("preloader");
