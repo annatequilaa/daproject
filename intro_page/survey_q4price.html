@@ -104,9 +104,9 @@
     slider.noUiSlider.on('update', function(values, handle) {
       var value = values[handle];
       if (handle === 0) {
-        minPrice.innerHTML = 'Min Price: $' + value;
+        minPrice.innerHTML = 'Min Price: ' + value + "NTD";
       } else {
-        maxPrice.innerHTML = 'Max Price: $' + value;
+        maxPrice.innerHTML = 'Max Price: ' + value + "NTD";
       }
     });
     document.getElementById('slider-container').appendChild(minPrice);
